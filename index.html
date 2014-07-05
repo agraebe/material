@@ -7,23 +7,20 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Google Material-Styled Surface Reaction</title>
-        <meta name="description" content="A jQuery Plugin by Alexander Graebe using CSS3 animations and AwesomeFonts">
+        <meta name="description" content="A jQuery Plugin by Alexander Graebe using CSS3 animations, transitions, jQuery.keyframes and AwesomeFonts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="distribute/jquery.material.css">
+        <link rel="stylesheet" href="distribute/jquery.materialize.min.css">
         <style>
         	body { 
-			  background: url('bg.jpg') no-repeat center center fixed; 
-			  -webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			  background-size: cover;
-			}
-
-            body {
-                padding-bottom: 20px;
+			  	background: url('bg.jpg') no-repeat center center fixed; 
+			  	-webkit-background-size: cover;
+			  	-moz-background-size: cover;
+			  	-o-background-size: cover;
+			  	background-size: cover;
+              	padding-bottom: 20px;
             }
 
             .card {
@@ -33,7 +30,10 @@
 				-webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.5);
 				-moz-box-shadow:    0px 3px 18px 0px rgba(0, 0, 0, 0.5);
 				box-shadow:         0px 3px 18px 0px rgba(0, 0, 0, 0.5);
-				-webkit-transition: opacity 0.5s ease-in-out;
+				-webkit-transition: opacity 0.75s ease-in-out;
+				-moz-transition: opacity 0.75s ease-in-out;
+				-o-transition: opacity 0.75s ease-in-out;
+				-ms-transition: opacity 0.75s ease-in-out;
 				opacity: 0;
 			}
 
@@ -45,6 +45,16 @@
 				margin-bottom: 50px;
 				background-color: rgba(255,255,255,0.8);
 			}
+
+			.fa-rss {
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				position: relative;
+				top: -10px;
+				padding-right: 20px;
+			}
         </style>
     </head>
     <body>
@@ -55,11 +65,11 @@
     <div class="fluid-container">
       <div class="row">
       	<div class="page-header">
-		  <h1>Google Material-Styled Surface Reaction<br/><small>jQuery Plugin using CSS3 animations. <a href="http://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-responsive-interaction-examples" target="_blank">Details</a>.</small></h1>
+		  <h1>Google Material-Styled Surface Reaction<br/><small>jQuery Plugin using CSS3 animations (with jQuery.keyframes) and transitions. <a href="http://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-responsive-interaction-examples" target="_blank">Details</a>.</small></h1>
 		</div>
       </div>
       <div class="row">
-        <div class="col-md-4 col-md-offset-4 card">
+        <div class="col-md-6 col-md-offset-3 card col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
         <ul>
           <li><i class="fa fa-rss"></i> WIFI-01</li>
           <li><i class="fa fa-rss"></i> WIFI-02</li>
@@ -71,10 +81,17 @@
       </div>
     </div> 
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="distribute/jquery.material.js"></script>
+    	<script src="distribute/jquery.keyframes.min.js"></script>
+        <script src="distribute/jquery.materialize.min.js"></script>
         <script>
         	$(function() {
-				$('ul').material();
+				$('ul').materialize({
+					//circleColor : "yellow",
+					//backgroundColor : "red",
+					//circleRadius : 50,
+					//cornerAwareness : true,
+					//animationTime : 800
+				});
 				$('.card').css('opacity','1');
 			});
         </script>

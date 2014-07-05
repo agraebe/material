@@ -1,0 +1,28 @@
+@font-face {
+    font-family: RobotoRegular;
+    src: url('Roboto-Regular.ttf');
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.list-item {
+	padding: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: RobotoRegular;
+	font-size: 14pt;
+	color: rgba(0,0,0,0.4);
+	line-height: 40px;
+	border-bottom: 2px solid #ededed;
+	cursor: pointer;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.list-item:last-child {
+	border-bottom: 0;
+}
