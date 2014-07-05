@@ -59,11 +59,14 @@
             }]);
 
             // add onclick animation
-            $('.list-item').bind('click', function(e) {
+            $('.list-item').bind('click', function(evt) {
+                // firefox event bugfix
+                var e = (window.event) ? window.event : evt;
+
                 // get new circle position
-                var newTop = ($(this).height()/2) + settings.circleRadius;
+                var newTop = e.pageY - $(this).offset().top + settings.circleRadius;
                 // replace to remove px from css string
-                var newLeft = event.pageX - $(this).offset().left - settings.circleRadius - $('.list-item').css('padding-left').replace(/[^-\d\.]/g, '');
+                var newLeft = e.pageX - $(this).offset().left - settings.circleRadius - $('.list-item').css('padding-left').replace(/[^-\d\.]/g, '');
 
                 // set new position
                 $(this).find(".circle").css( {top: newTop, left: newLeft } );
@@ -80,7 +83,7 @@
                     });
                 } else {
                     // let, midlle or right click?
-                    var xratio = ((event.pageX - $(this).offset().left)/$(this).width());
+                    var xratio = ((e.pageX - $(this).offset().left)/$(this).width());
                     if(xratio > 0.6) {
                         $(this).find(".circle").playKeyframe({
                             name: 'materialRight',
